@@ -1,9 +1,14 @@
 FROM wyveo/nginx-php-fpm:php80
 
 RUN adduser --disabled-password --gecos '' --home "/home/adminuser" adminuser
-COPY ./supervisord.conf /etc/supervisord.conf
+#COPY ./supervisord.conf /etc/supervisord.conf
+COPY ./start.sh /start.sh
+RUN chmod +x /start.sh
 
-#RUN sed -i 's+user=root+;user=root+g' /etc/supervisord.conf
+RUN sed -i 's+user=root+;user=root+g' /etc/supervisord.conf
+
+RUN mkdir /etc/nginx-tmp/
+RUN cp -rp /etc/nginx/. /etc/nginx-tmp/.
 
 RUN chown -R adminuser:adminuser /etc/nginx
 RUN chown -R adminuser:adminuser /var/log && chmod -R 777 /var/log
