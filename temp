@@ -1,0 +1,1 @@
+sudo docker run --rm --name testnginx -p 8080:8080 --read-only --tmpfs=/tmp --tmpfs=/var/log/nginx/ --tmpfs=/var/log/ --tmpfs=/var/cache/nginx --tmpfs=/run/php/ --tmpfs=/var/run/ klovercloud/nginx-php:latest
