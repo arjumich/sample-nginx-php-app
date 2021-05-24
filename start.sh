@@ -1,5 +1,8 @@
 #!/bin/bash
 
+ls -ld /run/php/
+sleep 5
+
 #### KLOVERCLOUD CHANGES (START) ####
 #### Persisting the nginx configuration files####
 
@@ -18,6 +21,9 @@ then
 else
 	echo '[ERROR] /etc/nginx/ doesnt exists'
 fi
+
+ls -ld /run/php/
+sleep 5
 
 #### KLOVERCLOUD CHANGES (END) ####
 

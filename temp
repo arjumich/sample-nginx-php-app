@@ -21,3 +21,11 @@ else
 fi
 
 #### KLOVERCLOUD CHANGES (END) ####
+
+
+changed default /run/lighttpd.pid file location to /tmp/lighttpd.pid
+- php error log file is mounted and saved locally.
+- using php through php_fastcgi (php 7.4)
+- main server configuration file here is the lighttpd.conf file.
+- The default config file simply serves files from /var/www/localhost/htdocs. Sample index file is there for testing. 
+- default listening port is 8080
